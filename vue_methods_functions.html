@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<div id="app">
-			<p>The shirt costs {{ shirtCost }}</p>
-			<p>The hat costs {{ hatCost }}</p>
-		</div>
-		<script src="https://unpkg.com/vue"></script>
-		<script type="text/javascript">
-   const app = Vue.createApp({
-			el: '#app',
-    data() {
-      return {
-        shirtPrice: 25,
-        hatPrice: 10,
 
-        currency: '$',
-        salesTax: 7.25
-      }
-    },
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<div id="app">
+		<p>The shirt costs {{ shirtCost }}</p>
+		<p>The hat costs {{ hatCost }}</p>
+	</div>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script type="text/javascript">
+		const app = Vue.createApp({
+			el: '#app',
+			data() {
+				return {
+					shirtPrice: 25,
+					hatPrice: 10,
+
+					currency: '$',
+					salesTax: 7.25
+				}
+			},
 			computed: {
 				shirtCost() {
 					return this.addCurrency(this.calculateSalesTax(this.shirtPrice))
@@ -43,7 +45,8 @@
 				}
 			}
 		});
-     app.mount('#app')
-		</script>
-	</body>
+		app.mount('#app')
+	</script>
+</body>
+
 </html>
