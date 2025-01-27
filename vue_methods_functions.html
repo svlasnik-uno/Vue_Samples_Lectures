@@ -26,14 +26,17 @@
 			},
 			computed: {
 				shirtCost() {
+					console.log("inside shirtCost\n")
 					return this.addCurrency(this.calculateSalesTax(this.shirtPrice))
 				},
 				hatCost() {
+					console.log("inside hatCost\n")
 					return this.addCurrency(this.calculateSalesTax(this.hatPrice))
 				},
 			},
 			methods: {
 				calculateSalesTax(price) {
+					console.log("inside calculateSalesTax\n")
 					// Work out the price of the item including sales tax
 					return parseFloat(
 						Math.round((this.salesTax / 100) * price) + price
@@ -41,6 +44,7 @@
 				},
 
 				addCurrency(price) {
+					console.log("inside addCurrency " + price + "\n")
 					return this.currency + price;
 				}
 			}
